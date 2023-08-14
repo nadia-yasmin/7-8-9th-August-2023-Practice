@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="navbar">
+        <button id="btn"  title="Move Object"><p id="pid"></p><i class='far fa-sun' style='font-size:30px;color:goldenrod' onclick="changeBackground()"></i></button>
+    </div>
+    <br>
+    <div id="bd">
+        <button id="animal" onclick="tigerFunction()" onmouseover="tigerMouseFunction()" onmouseleave="tigerMouseFunction2()">Animal</button>
+        <button id="fruit"  onclick="animalFunction()" onmouseover="animalMouseFunction()" onmouseleave="animalMouseFunction2()">Fruit</button>
+        <button id="flower" onclick="flowerFunction()" onmouseover="flowerMouseFunction()" onmouseleave="flowerMouseFunction2()">Flower</button>
+        <button id="dummy1" onclick="getProductData()" onmouseover="dummyMouseFunction()" onmouseleave="dummyMouseFunction2()">Motivation</button>
+    </div>
+    <div id="animal3" class="item-container">
+    <h1 id="animal2"> Fruit</h1></div>
+
+    <div id="fruit3" class="item-container">
+    <h1 id="fruit2"> Animal
+
+    </h1></div>
+    <div id="flower3" class="item-container">
+    <h1 id="flower2"> Flower
+
+    </h1></div>
+    <div id="dummy" class="item-container">
+        <h1 id="dummy2">Motivation
+    
+        </h1></div>
+    <style>
+        .item-container {
+            display: inline-block;
+            vertical-align: top;
+            margin: 10px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        let body=document.body;
+        body.style.backgroundColor="black";
+        let navbar=document.getElementById("navbar");
+        let button=document.getElementById("btn");
+        navbar.style.display="flex";
+        navbar.style.justifyContent="flex-end";
+        navbar.style.backgroundColor="grey";
+        navbar.style.height="60px";
+        navbar.style.overflow="hidden";
+
+        button.style.width = "100px"; 
+        button.style.margin = "end";
+        button.style.display="flex";
+        button.style.alignItems="center";
+        // button.style.padding="50px";
+        // button.style.marginRight:"20px";
+        let pid=document.getElementById("pid");
+        count=0;
+        function changeBackground(){
+            count++;
+            if(count%2==0){
+                body.style.backgroundColor="#e6d7ff";
+                pid.innerText="Light ";
+                pid.style.color = "grey";
+                pid.style.fontSize="20px";
+                pid.style.textShadow = "1px 1px 2px rgba(0, 0, 0, 0.8)";
+            }
+            else{
+                body.style.backgroundColor="black";
+                pid.innerText = "Dark ";
+                pid.style.color = "black";
+                pid.style.fontSize="20px"
+                pid.style.textShadow = "1px 1px 2px rgba(0, 0, 0, 0.8)";
+            }
+
+        }
+        const bd=document.getElementById("bd");
+        const animal = document.getElementById("animal");
+        const fruit = document.getElementById("fruit");
+        const flower = document.getElementById("flower");
+        const dummy1 = document.getElementById("dummy1");
+        const animal3= document.getElementById("animal3");
+        const fruit2 = document.getElementById("fruit2");
+        const flower2 = document.getElementById("flower2");
+        bd.style.display="flex";
+        bd.style.alignItems="center";
+        bd.style.justifyContent = "center"; 
+        animal.style.color="blue";
+        fruit.style.color="blue";
+        flower.style.color="blue";
+        dummy1.style.color="blue";
+        animal.style.margin = "10px"; /* Add some margin for spacing */
+        fruit.style.margin = "10px";
+        flower.style.margin = "10px";
+        animal2.style.color="blue";
+        fruit2.style.color="blue";
+        flower2.style.color="blue";
+        const dummy = document.getElementById("dummy");
+        const dummy2 = document.getElementById("dummy2");
+        dummy2.style.color="blue";
+        dummy2.style.margin = "10px";
+        // fruit.style.color="blue";
+
+
+    function animalFunction(){
+        const jackfruit=document.createElement("p");
+        jackfruit.innerText="Name: Jackfruit";
+        jackfruit.style.color="skyblue";
+        jackfruit.style.fontSize="20px";
+
+        animal3.appendChild(jackfruit);
+
+        const jackfruitImage = document.createElement("img");
+            jackfruitImage.src = "jack.jpg"; // Replace with the actual image path or URL
+            jackfruitImage.alt = "Jackfruit Image";
+            jackfruitImage.style.width = "150px"; // Set image width as desired
+            jackfruitImage.style.height = "150px"; // Set image height as desired
+            animal3.appendChild(jackfruitImage);
+
+    }
+    function tigerFunction(){
+        const tiger=document.createElement("p");
+        tiger.innerText="Name: Tiger";
+        tiger.style.color="skyblue";
+        tiger.style.fontSize="20px";
+
+    fruit3.appendChild(tiger);
+
+        const tigerImage = document.createElement("img");
+            tigerImage.src = "tiger.jpg"; // Replace with the actual image path or URL
+            tigerImage.alt = "Tiger Image";
+            tigerImage.style.width = "150px"; // Set image width as desired
+            tigerImage.style.height = "150px"; // Set image height as desired
+            fruit3.appendChild(tigerImage);
+    }
+    function tigerMouseFunction(){
+        animal.style.fontSize="30px";
+    }
+    function tigerMouseFunction2(){
+        animal.style.fontSize="15px";
+    }
+    function animalMouseFunction(){
+        fruit.style.fontSize="30px";
+    }
+    function animalMouseFunction2(){
+        fruit.style.fontSize="15px";
+    }
+    function flowerMouseFunction(){
+        flower.style.fontSize="30px";
+    }
+    function flowerMouseFunction2(){
+        flower.style.fontSize="15px";
+    }
+    function dummyMouseFunction(){
+        dummy1.style.fontSize="30px";
+    }
+    function dummyMouseFunction2(){
+        dummy1.style.fontSize="15px";
+    }
+    function flowerFunction(){
+        const flower=document.createElement("p");
+        flower.innerText="Name: Water Lily";
+        flower.style.color="skyblue";
+        flower.style.fontSize="20px";
+
+    flower3.appendChild(flower);
+
+        const lilyImage = document.createElement("img");
+        lilyImage.src = "lily.jpg"; // Replace with the actual image path or URL
+            lilyImage.alt = "Tiger Image";
+            lilyImage.style.width = "150px"; // Set image width as desired
+            lilyImage.style.height = "150px"; // Set image height as desired
+            flower3.appendChild(lilyImage);
+    }
+        
+//  const outProductTitle=document.getElementById("productTitle");
+let counter=-1;
+    async function getProductData(){
+        counter++;
+        const response=await fetch("https://dummyjson.com/comments");
+        const jsonData=await response.json();
+        console.log("Data",jsonData);
+        console.log("Data",jsonData.comments[counter].body);
+        const dummyPara=document.createElement("p");
+        dummyPara.innerText="Motivation No "+counter+": "+jsonData.comments[counter].body;
+        dummyPara.style.color="skyblue";
+        dummyPara.style.fontSize="20px";
+        dummy.appendChild(dummyPara);
+        
+        
+    }
+    </script>
+</body>
+</html>

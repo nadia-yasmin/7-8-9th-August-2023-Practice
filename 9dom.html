@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    Dom manipulation
+</head>
+<body>
+    <h1 style="color:blue;" id="ourHeader">Our first dom manipulation</h1>
+    <p id="ourParagraph">This is our paragraph</p>
+    <button id="clickButton" onclick="onClickHandler()" onmouseover="onMouseHandler()" onmouseleave="onMouseLeaveHandler()">Click Me!</button>
+    <script>
+        const ourHeaderDom=document.getElementById("ourHeader");
+        const ourButtonDom=document.getElementById("clickButton");
+        ourHeaderDom.style.color="red";
+
+        const ourParagraphDom=document.getElementById("ourParagraph");
+        ourParagraphDom.style.color="blue";
+        ourParagraphDom.style.padding="10px";
+        ourParagraphDom.style.border="10px solid blue";
+        ourParagraphDom.style.borderRadius="10px";
+        ourButtonDom.style.margin="20px 30px 50px 100px";
+        // let count=0;
+        // ourButtonDom.addEventListener('click',()=>{
+        //     count++;
+        //     if(count%2==0){
+        //     console.log("Click is hapenning");
+        //     ourHeaderDom.style.color="green";
+        //     ourParagraphDom.style.backgroundColor="grey";}
+        //     else{
+        //         ourHeaderDom.style.color="red";
+        //         ourParagraphDom.style.backgroundColor="yellow";
+        //     }
+
+        // });
+        let count=0;
+        function onClickHandler(){
+            count++;
+            console.log("Click is hapenning");
+            if(count%2==0){
+            ourHeaderDom.style.color="grey";
+            ourHeaderDom.innerText="The color is changed to grey";}
+            else{
+                ourHeaderDom.style.color="black";
+                ourHeaderDom.style.color="The color is changed to black";
+            }
+            // ourParagraphDom.style.backgroundColor="grey";
+        }
+
+    function onMouseHandler(){
+        
+        ourParagraphDom.style.backgroundColor="skyblue";
+        ourParagraphDom.innerText="The color is blue";
+        
+    }
+    function onMouseLeaveHandler(){
+    ourParagraphDom.style.backgroundColor="pink";
+        ourParagraphDom.innerText="The color is blue";
+    }
+    </script>
+</body>
+</html>
